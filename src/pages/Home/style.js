@@ -27,7 +27,7 @@ export const Form = styled.form`
         span {
             background: #eee;
             color: #7159c1;
-            padding: 12.1px 15px;
+            padding: 12.6px 15px;
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
         }
