@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import Container from '../../components/Container';
 import RadialLoader from '../../components/Loader';
@@ -43,7 +44,15 @@ function Home() {
 
     function handleRemoveValue() {
         if (value === '') {
-            alert('Por favor, preencha o campo corretamente.');
+            toast.error('❕ Preencha o campo corretamente.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                pauseOnVisibilityChange: true,
+                draggable: true
+            });
         } else {
             setValue(value);
             setTotal(total - value);
@@ -57,12 +66,30 @@ function Home() {
 
             setHistoric([...historic, data]);
             setValue('');
+
+            toast.success('✔️ Saque realizado.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                pauseOnVisibilityChange: true,
+                draggable: true
+            });
         }
     }
 
     function handleAddValue() {
         if (value === '') {
-            alert('Por favor, preencha o campo corretamente.');
+            toast.error('❕ Preencha o campo corretamente.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                pauseOnVisibilityChange: true,
+                draggable: true
+            });
         } else {
             setValue(value);
             setTotal(total + value);
@@ -76,6 +103,16 @@ function Home() {
 
             setHistoric([...historic, data]);
             setValue('');
+
+            toast.success('✔️ Depósito realizado.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                pauseOnVisibilityChange: true,
+                draggable: true
+            });
         }
     }
 
