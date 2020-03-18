@@ -19,17 +19,16 @@ export const Form = styled.form`
     flex-direction: column;
     margin-top: 20px;
 
-    div {
+    label {
         display: flex;
         justify-content: center;
         align-items: center;
+        background: #eee;
+        border-radius: 4px;
 
         span {
-            background: #eee;
             color: #7159c1;
-            padding: 12.6px 15px;
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
+            padding: 10px 15px;
         }
 
         input {
@@ -40,6 +39,7 @@ export const Form = styled.form`
             border-top-right-radius: 4px;
             border-bottom-right-radius: 4px;
             font-size: 16px;
+            color: #7159c1;
         }
     }
 `;

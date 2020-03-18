@@ -88,17 +88,18 @@ function Home() {
             <RadialLoader currentValue={total} />
 
             <Form>
-                <div className="boxInput">
+                <label htmlFor="valor">
                     <span>Digite um valor:</span>
                     <input
                         type="number"
                         max="1000"
+                        placeholder="Exemplo: 120,00"
                         value={value > 1000 ? 1000 : value}
                         onChange={event =>
                             setValue(parseFloat(event.target.value))
                         }
                     />
-                </div>
+                </label>
 
                 <GroupButtons>
                     <ButtonMinus onClick={handleRemoveValue}>

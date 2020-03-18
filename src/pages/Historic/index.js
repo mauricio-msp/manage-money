@@ -22,30 +22,34 @@ function Historic() {
             </Anchor>
 
             <List>
-                <tr className="lineHead">
-                    <th>Valor</th>
-                    <th>Total</th>
-                    <th>Tipo</th>
-                    <th>Data</th>
-                </tr>
-                {list.map(item => (
-                    <tr key={item.date} className="lineBody">
-                        <td>
-                            {item.value.toLocaleString('de-DE', {
-                                style: 'currency',
-                                currency: 'BRL'
-                            })}
-                        </td>
-                        <td>
-                            {item.total.toLocaleString('de-DE', {
-                                style: 'currency',
-                                currency: 'BRL'
-                            })}
-                        </td>
-                        <td>{item.type}</td>
-                        <td>{item.date}</td>
+                <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Total</th>
+                        <th>Tipo</th>
+                        <th>Data</th>
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {list.map(item => (
+                        <tr key={item.date}>
+                            <td>
+                                {item.value.toLocaleString('de-DE', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                })}
+                            </td>
+                            <td>
+                                {item.total.toLocaleString('de-DE', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                })}
+                            </td>
+                            <td>{item.type}</td>
+                            <td>{item.date}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </List>
         </Container>
     );

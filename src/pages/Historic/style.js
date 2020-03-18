@@ -20,28 +20,32 @@ export const List = styled.table`
     border-spacing: 0;
     border-collapse: collapse;
 
-    tr.lineHead {
-        background: #7159c1;
+    thead {
+        tr {
+            background: #7159c1;
 
-        th {
-            color: #eee;
-            font-size: 16px;
-            padding: 5px;
+            th {
+                color: #eee;
+                font-size: 16px;
+                padding: 5px;
+            }
         }
     }
 
-    tr.lineBody {
-        background: #eee;
-        border-bottom: 1px solid #ccc;
+    tbody {
+        tr {
+            background: #eee;
+            border-bottom: 1px solid #ccc;
 
-        &:last-child {
-            border-bottom: 0;
-        }
+            &:last-child {
+                border-bottom: 0;
+            }
 
-        td {
-            color: #7159c1;
-            font-size: 16px;
-            padding: 10px;
+            td {
+                color: #7159c1;
+                font-size: 16px;
+                padding: 10px;
+            }
         }
     }
 `;
