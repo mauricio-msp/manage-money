@@ -67,6 +67,7 @@ function Historic() {
             <Pagination
                 itemsPerPage={itemsPerPage}
                 totalItems={list.length}
+                currentPage={currentPage}
                 paginate={paginate}
             />
         </Container>

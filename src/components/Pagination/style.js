@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 const Paginate = styled.ul`
     list-style: none;
@@ -19,6 +20,19 @@ const Paginate = styled.ul`
             &:hover {
                 background: #7951c9;
                 color: #fff;
+            }
+        }
+    }
+
+    li.active {
+        a {
+            background: #7951c9;
+            color: #fff;
+            transition: all ease-in-out 0.3s;
+
+            &:hover {
+                background: ${darken(0.09, '#7951c9')};
+                border: 2px solid ${darken(0.09, '#7951c9')};
             }
         }
     }
