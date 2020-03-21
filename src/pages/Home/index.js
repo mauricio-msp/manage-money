@@ -119,7 +119,7 @@ function Home() {
     return (
         <Container>
             <Anchor>
-                <Link to="/historico">histórico &rsaquo;&rsaquo;</Link>
+                <Link to="/historico/1">histórico &rsaquo;&rsaquo;</Link>
             </Anchor>
 
             <RadialLoader currentValue={total} />

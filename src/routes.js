@@ -9,7 +9,7 @@ function Routes() {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/historico" component={Historic} />
+                <Route path="/historico/:page?" component={Historic} />
             </Switch>
         </BrowserRouter>
     );

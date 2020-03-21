@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 import { Anchor, List } from './style';
 
 function Historic() {
+    const { page } = useParams();
+
     const [list, setList] = useState([]);
+    const [currentPage, setCurrentPage] = useState(page);
+    const [itemsPerPage] = useState(8);
+
+    const indexOfLastList = currentPage * itemsPerPage;
+    const indexOfFirstList = indexOfLastList - itemsPerPage;
+    const currentList = list.slice(indexOfFirstList, indexOfLastList);
+
+    function paginate(pageNumber) {
+        setCurrentPage(pageNumber);
+    }
 
     useEffect(() => {
         const history = localStorage.getItem('historico');
@@ -20,7 +33,6 @@ function Historic() {
             <Anchor>
                 <Link to="/">&lsaquo;&lsaquo; voltar</Link>
             </Anchor>
-
             <List>
                 <thead>
                     <tr>
@@ -31,7 +43,7 @@ function Historic() {
                     </tr>
                 </thead>
                 <tbody>
-                    {list.map(item => (
+                    {currentList.map(item => (
                         <tr key={item.date}>
                             <td>
                                 {item.value.toLocaleString('de-DE', {
@@ -51,6 +63,12 @@ function Historic() {
                     ))}
                 </tbody>
             </List>
+
+            <Pagination
+                itemsPerPage={itemsPerPage}
+                totalItems={list.length}
+                paginate={paginate}
+            />
         </Container>
     );
 }

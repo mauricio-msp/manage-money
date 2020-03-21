@@ -16,8 +16,7 @@ export const Anchor = styled.div`
 export const List = styled.table`
     width: 100%;
     text-align: center;
-    border: none;
-    border-spacing: 0;
+    border: 1px solid #7159c1;
     border-collapse: collapse;
 
     thead {
@@ -26,8 +25,13 @@ export const List = styled.table`
 
             th {
                 color: #eee;
+                border-right: 1px solid #eee;
                 font-size: 16px;
                 padding: 5px;
+
+                &:last-child {
+                    border: 0;
+                }
             }
         }
     }
@@ -43,8 +47,13 @@ export const List = styled.table`
 
             td {
                 color: #7159c1;
+                border-right: 1px solid #7159c1;
                 font-size: 16px;
                 padding: 10px;
+
+                &:last-child {
+                    border: 0;
+                }
             }
         }
     }
