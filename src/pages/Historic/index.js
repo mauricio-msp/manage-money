@@ -46,16 +46,16 @@ function Historic() {
                     {currentList.map(item => (
                         <tr key={item.date}>
                             <td>
-                                {item.value.toLocaleString('de-DE', {
+                                {Intl.NumberFormat('pt-BR', {
                                     style: 'currency',
                                     currency: 'BRL'
-                                })}
+                                }).format(item.value)}
                             </td>
                             <td>
-                                {item.total.toLocaleString('de-DE', {
+                                {Intl.NumberFormat('pt-BR', {
                                     style: 'currency',
                                     currency: 'BRL'
-                                })}
+                                }).format(item.total)}
                             </td>
                             <td>{item.type}</td>
                             <td>{item.date}</td>

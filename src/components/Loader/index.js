@@ -24,12 +24,12 @@ function Loader(props) {
         >
             <ProgressText stateValue={currentValue}>
                 <strong>
-                    {currentValue.toLocaleString('de-DE', {
+                    {Intl.NumberFormat('pt-BR', {
                         style: 'currency',
                         currency: 'BRL'
-                    })}
+                    }).format(currentValue)}
                 </strong>
-                <span>1.000,00 R$</span>
+                <span>R$ 1.000,00</span>
             </ProgressText>
         </CircularProgressbarWithChildren>
     );
