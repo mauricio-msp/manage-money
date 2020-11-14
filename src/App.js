@@ -6,13 +6,13 @@ import GlobalStyle from './styles/global';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-    return (
-        <>
-            <Routes />
-            <GlobalStyle />
-            <ToastContainer />
-        </>
-    );
+  return (
+    <>
+      <Routes />
+      <GlobalStyle />
+      <ToastContainer />
+    </>
+  );
 }
 
 export default App;
