@@ -9,6 +9,8 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
+    width: 100vw;
+    height: 100vh;
     min-height: 100%;
   }
 
@@ -16,6 +18,10 @@ export default createGlobalStyle`
     background: #7159c1;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   body, input, button {
